@@ -25,85 +25,57 @@
     background: linear-gradient(to right, #5865F2, #25D366);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: fadeIn 1s ease forwards;
   }
   p {
     color:#ddd;
     font-size:1.2em;
     margin-top:10px;
-    animation: fadeIn 1.2s ease forwards;
   }
-
-  /* Logo */
-  .logo {
-    width:150px;
-    height:150px;
-    border-radius:30%;
-    object-fit:cover;
-    box-shadow:0 0 25px rgba(255,255,255,0.2);
-    animation: fadeIn 0.8s ease forwards;
-  }
-
-  /* Buttons Container */
   .buttons {
     margin-top:40px;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
   }
-
-  /* Buttons */
   .btn {
     display:inline-flex;
     align-items:center;
-    gap:12px;
-    padding:15px 35px;
+    gap:10px;
+    padding:15px 30px;
     border:none;
-    border-radius:25px;
+    border-radius:15px;
     color:white;
     font-size:1.1em;
     font-weight:600;
     cursor:pointer;
     text-decoration:none;
-    transition: all 0.4s ease;
-    background-size: 200% 200%;
-    animation: fadeIn 1.5s ease forwards;
+    transition: all 0.3s ease;
+    margin:10px;
   }
   .btn img {
-    width:30px;
-    height:30px;
+    width:28px;
+    height:28px;
   }
-
-  /* Discord Button */
   .discord {
-    background: linear-gradient(45deg, #5865F2, #7289DA);
-    box-shadow: 0 0 25px #5865F299;
+    background:#5865F2;
+    box-shadow:0 0 20px #5865F299;
   }
-  .discord:hover {
-    transform: translateY(-5px) scale(1.05);
-    background-position: right center;
-    box-shadow: 0 0 35px #5865F2aa;
-  }
-
-  /* WhatsApp Button */
+  .discord:hover {transform:scale(1.05);}
   .whatsapp {
-    background: linear-gradient(45deg, #25D366, #128C7E);
-    box-shadow: 0 0 25px #25D36699;
+    background:#25D366;
+    box-shadow:0 0 20px #25D36699;
   }
-  .whatsapp:hover {
-    transform: translateY(-5px) scale(1.05);
-    background-position: right center;
-    box-shadow: 0 0 35px #25D366aa;
+  .whatsapp:hover {transform:scale(1.05);}
+  .logo {
+    width:130px;
+    height:130px;
+    border-radius:30%;
+    object-fit:cover;
+    box-shadow:0 0 25px rgba(255,255,255,0.2);
+    animation:fadeIn 1.2s ease;
   }
-
-  /* Fade-in Animation */
   @keyframes fadeIn {
-    from {opacity:0; transform:translateY(20px);}
+    from {opacity:0; transform:translateY(30px);}
     to {opacity:1; transform:translateY(0);}
   }
-
-  /* Footer */
+  .fade-in {animation:fadeIn 1.2s ease forwards;}
   footer {
     position:absolute;
     bottom:20px;
@@ -114,27 +86,27 @@
 </head>
 <body>
   <!-- Logo -->
-  <img src="BeastBotLogo.png" alt="Beast Bot Logo" class="logo">
+  <img src="BeastBotLogo.png" alt="Beast Bot Logo" class="logo fade-in">
 
   <!-- Titel -->
-  <h1>Beast Bot</h1>
-  <p>Dein smarter Begleiter auf Discord & WhatsApp</p>
+  <h1 class="fade-in">Beast Bot</h1>
+  <p class="fade-in">Dein smarter Begleiter auf Discord & WhatsApp</p>
 
   <!-- Buttons -->
-  <div class="buttons">
+  <div class="buttons fade-in">
     <!-- Discord -->
     <a class="btn discord" href="https://discord.com/oauth2/authorize?client_id=1431342753207549992&scope=bot&permissions=8" target="_blank">
       <img src="discord.png" alt="Discord">Discord hinzufügen
     </a>
 
     <!-- WhatsApp -->
-    <a class="btn whatsapp" href="https://wa.me/DEINE_NUMMER" target="_blank">
+    <a class="btn whatsapp" href="https://wa.me/4367764696963" target="_blank">
       <img src="whatsapp.png" alt="WhatsApp">WhatsApp starten
     </a>
   </div>
 
   <!-- Status -->
-  <p>Status: 🟢 Online</p>
+  <p class="fade-in">Status: 🟢 Online</p>
 
   <!-- Footer -->
   <footer>© 2025 Beast Bot — Alle Rechte vorbehalten</footer>
