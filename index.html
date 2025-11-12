@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beast Bot - WhatsApp & Discord</title>
+<style>
+  body { font-family: Arial, sans-serif; background:#f7f7f7; color:#222; margin:0; text-align:center; }
+  header { background: linear-gradient(90deg, #5865f2, #25D366); color:white; padding:20px;}
+  .container { max-width:800px; margin:20px auto; background:white; border-radius:12px; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+  .buttons button { margin:5px; padding:10px 20px; border:none; border-radius:8px; cursor:pointer; font-weight:bold; }
+  .discord { background:#5865f2; color:white; }
+  .whatsapp { background:#25D366; color:white; }
+  .status { margin:10px 0; font-weight:bold; }
+  .commands { text-align:left; margin:20px auto; width:fit-content; }
+  .commands div { background:#f0f0f0; border-radius:8px; padding:10px; margin-bottom:5px; }
+  footer { margin-top:20px; font-size:12px; color:#555; }
+  img { border-radius:12px; margin:10px 0; }
+</style>
+</head>
+<body>
+<header>
+<h1>🐺 Beast Bot Dashboard</h1>
+<p>Wähle deinen Bot aus und sieh dir die Befehle an</p>
+</header>
+
+<div class="container">
+<div class="buttons">
+<button class="discord" onclick="showBot('discord')">Discord Bot</button>
+<button class="whatsapp" onclick="showBot('whatsapp')">WhatsApp Bot</button>
+</div>
+
+<div id="bot-section">
+<h2 id="bot-name">Discord Beast Bot</h2>
+<img id="bot-image" src="discord.png" width="100" alt="Discord Logo">
+<p id="bot-status" class="status">Status: 🟢 Online</p>
+
+<div class="commands">
+<h3>Befehle:</h3>
+<div>/support – Support anfordern</div>
+<div>/bewerbung – Bewerbung starten</div>
+<div>/menu – Hauptmenü anzeigen</div>
+<div>/info – Zeigt Infos über Beast Bot</div>
+</div>
+</div>
+</div>
+
+<footer>© 2025 Beast Bot | Erstellt mit ❤️</footer>
+
+<script>
+function showBot(type){
+  const name=document.getElementById('bot-name');
+  const image=document.getElementById('bot-image');
+  const status=document.getElementById('bot-status');
+  if(type==='discord'){
+    name.textContent='Discord Beast Bot';
+    image.src='discord.png';
+    status.textContent='Status: 🟢 Online';
+  }else{
+    name.textContent='WhatsApp Beast Bot';
+    image.src='whatsapp.png';
+    status.textContent='Status: 🔴 Offline';
+  }
+}
+</script>
+</body>
+</html>
