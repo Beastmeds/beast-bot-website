@@ -1,67 +1,90 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beast Bot - WhatsApp & Discord</title>
-<style>
-  body { font-family: Arial, sans-serif; background:#f7f7f7; color:#222; margin:0; text-align:center; }
-  header { background: linear-gradient(90deg, #5865f2, #25D366); color:white; padding:20px;}
-  .container { max-width:800px; margin:20px auto; background:white; border-radius:12px; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1);}
-  .buttons button { margin:5px; padding:10px 20px; border:none; border-radius:8px; cursor:pointer; font-weight:bold; }
-  .discord { background:#5865f2; color:white; }
-  .whatsapp { background:#25D366; color:white; }
-  .status { margin:10px 0; font-weight:bold; }
-  .commands { text-align:left; margin:20px auto; width:fit-content; }
-  .commands div { background:#f0f0f0; border-radius:8px; padding:10px; margin-bottom:5px; }
-  footer { margin-top:20px; font-size:12px; color:#555; }
-  img { border-radius:12px; margin:10px 0; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beast Bot | WhatsApp & Discord</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1e1e2f, #111119);
+      color: white;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+    }
+    h1 {
+      font-size: 3em;
+      font-weight: 700;
+      margin-top: 20px;
+      background: linear-gradient(to right, #5865F2, #25D366);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p {color: #ddd; font-size: 1.2em; margin-top: 10px;}
+    .buttons {margin-top: 40px;}
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 15px;
+      color: white;
+      font-size: 1.1em;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .btn img {
+      width: 28px;
+      height: 28px;
+    }
+    .discord {
+      background: #5865F2;
+      box-shadow: 0 0 20px #5865F299;
+    }
+    .discord:hover {transform: scale(1.05);}
+    .whatsapp {
+      background: #25D366;
+      box-shadow: 0 0 20px #25D36699;
+      margin-left: 15px;
+    }
+    .whatsapp:hover {transform: scale(1.05);}
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9em;
+      color: #999;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    .fade-in {
+      animation: fadeIn 1.2s ease forwards;
+    }
+    .logo {
+      width: 130px;
+      height: 130px;
+      border-radius: 30%;
+      object-fit: cover;
+      box-shadow: 0 0 25px rgba(255,255,255,0.2);
+      animation: fadeIn 1.2s ease;
+    }
+  </style>
 </head>
 <body>
-<header>
-<h1>🐺 Beast Bot Dashboard</h1>
-<p>Wähle deinen Bot aus und sieh dir die Befehle an</p>
-</header>
-
-<div class="container">
-<div class="buttons">
-<button class="discord" onclick="showBot('discord')">Discord Bot</button>
-<button class="whatsapp" onclick="showBot('whatsapp')">WhatsApp Bot</button>
-</div>
-
-<div id="bot-section">
-<h2 id="bot-name">Discord Beast Bot</h2>
-<img id="bot-image" src="discord.png" width="100" alt="Discord Logo">
-<p id="bot-status" class="status">Status: 🟢 Online</p>
-
-<div class="commands">
-<h3>Befehle:</h3>
-<div>/support – Support anfordern</div>
-<div>/bewerbung – Bewerbung starten</div>
-<div>/menu – Hauptmenü anzeigen</div>
-<div>/info – Zeigt Infos über Beast Bot</div>
-</div>
-</div>
-</div>
-
-<footer>© 2025 Beast Bot | Erstellt mit ❤️</footer>
-
-<script>
-function showBot(type){
-  const name=document.getElementById('bot-name');
-  const image=document.getElementById('bot-image');
-  const status=document.getElementById('bot-status');
-  if(type==='discord'){
-    name.textContent='Discord Beast Bot';
-    image.src='discord.png';
-    status.textContent='Status: 🟢 Online';
-  }else{
-    name.textContent='WhatsApp Beast Bot';
-    image.src='whatsapp.png';
-    status.textContent='Status: 🔴 Offline';
-  }
-}
-</script>
-</body>
-</html>
+  <img src="BeastBotLogo.png" alt="Beast Bot Logo" class="logo">
+  <h1 class="fade-in">Beast Bot</h1>
+  <p class="fade-in">Dein smarter Begleiter auf Discord & WhatsApp</p>
+  
+  <div class="buttons fade-in">
+    <a class="btn discord" href="https://discord.com/oauth2/authorize?client_id=1431342753207549992&scope=bot&permissions=8">
+      <img src="discord.png" alt="Discord">Zu Discord h
