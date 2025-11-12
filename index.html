@@ -1,99 +1,114 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beast Bot | WhatsApp & Discord</title>
-  <style>
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #1e1e2f, #111119);
-      color: white;
-      text-align: center;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      overflow-x: hidden;
-    }
-    h1 {
-      font-size: 3em;
-      font-weight: 700;
-      margin-top: 20px;
-      background: linear-gradient(to right, #5865F2, #25D366);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    p {color: #ddd; font-size: 1.2em; margin-top: 10px;}
-    .buttons {margin-top: 40px;}
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 15px;
-      color: white;
-      font-size: 1.1em;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    .btn img {
-      width: 28px;
-      height: 28px;
-    }
-    .discord {
-      background: #5865F2;
-      box-shadow: 0 0 20px #5865F299;
-    }
-    .discord:hover {transform: scale(1.05);}
-    .whatsapp {
-      background: #25D366;
-      box-shadow: 0 0 20px #25D36699;
-      margin-left: 15px;
-    }
-    .whatsapp:hover {transform: scale(1.05);}
-    footer {
-      position: absolute;
-      bottom: 20px;
-      font-size: 0.9em;
-      color: #999;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(30px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-    .fade-in {
-      animation: fadeIn 1.2s ease forwards;
-    }
-    .logo {
-      width: 130px;
-      height: 130px;
-      border-radius: 30%;
-      object-fit: cover;
-      box-shadow: 0 0 25px rgba(255,255,255,0.2);
-      animation: fadeIn 1.2s ease;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beast Bot | WhatsApp & Discord</title>
+<style>
+  * {margin:0; padding:0; box-sizing:border-box;}
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #111119);
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    overflow-x:hidden;
+  }
+  h1 {
+    font-size:3em;
+    font-weight:700;
+    margin-top:20px;
+    background: linear-gradient(to right, #5865F2, #25D366);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  p {
+    color:#ddd;
+    font-size:1.2em;
+    margin-top:10px;
+  }
+  .buttons {
+    margin-top:40px;
+  }
+  .btn {
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:15px 30px;
+    border:none;
+    border-radius:15px;
+    color:white;
+    font-size:1.1em;
+    font-weight:600;
+    cursor:pointer;
+    text-decoration:none;
+    transition: all 0.3s ease;
+    margin:10px;
+  }
+  .btn img {
+    width:28px;
+    height:28px;
+  }
+  .discord {
+    background:#5865F2;
+    box-shadow:0 0 20px #5865F299;
+  }
+  .discord:hover {transform:scale(1.05);}
+  .whatsapp {
+    background:#25D366;
+    box-shadow:0 0 20px #25D36699;
+  }
+  .whatsapp:hover {transform:scale(1.05);}
+  .logo {
+    width:130px;
+    height:130px;
+    border-radius:30%;
+    object-fit:cover;
+    box-shadow:0 0 25px rgba(255,255,255,0.2);
+    animation:fadeIn 1.2s ease;
+  }
+  @keyframes fadeIn {
+    from {opacity:0; transform:translateY(30px);}
+    to {opacity:1; transform:translateY(0);}
+  }
+  .fade-in {animation:fadeIn 1.2s ease forwards;}
+  footer {
+    position:absolute;
+    bottom:20px;
+    font-size:0.9em;
+    color:#999;
+  }
+</style>
 </head>
 <body>
-  <img src="BeastBotLogo.png" alt="Beast Bot Logo" class="logo">
+  <!-- Logo -->
+  <img src="BeastBotLogo.png" alt="Beast Bot Logo" class="logo fade-in">
+
+  <!-- Titel -->
   <h1 class="fade-in">Beast Bot</h1>
   <p class="fade-in">Dein smarter Begleiter auf Discord & WhatsApp</p>
-  
+
+  <!-- Buttons -->
   <div class="buttons fade-in">
-    <a class="btn discord" href="https://discord.com/oauth2/authorize?client_id=1431342753207549992&scope=bot&permissions=8">
-      <img src="discord.png" alt="Discord">Zu Discord hinzufügen
+    <!-- Discord -->
+    <a class="btn discord" href="https://discord.com/oauth2/authorize?client_id=1431342753207549992&scope=bot&permissions=8" target="_blank">
+      <img src="discord.png" alt="Discord">Discord hinzufügen
     </a>
-    <a class="btn whatsapp" href="https://wa.me/4367764694963">
+
+    <!-- WhatsApp -->
+    <a class="btn whatsapp" href="https://wa.me/4367764696963" target="_blank">
       <img src="whatsapp.png" alt="WhatsApp">WhatsApp starten
     </a>
   </div>
 
+  <!-- Status -->
+  <p class="fade-in">Status: 🟢 Online</p>
+
+  <!-- Footer -->
   <footer>© 2025 Beast Bot — Alle Rechte vorbehalten</footer>
 </body>
 </html>
