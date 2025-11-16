@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Beast Bot | WhatsApp & Discord</title>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GC9FH97R9K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GC9FH97R9K');
+</script>
+
 <style>
   * {margin:0; padding:0; box-sizing:border-box;}
   body {
@@ -34,7 +44,6 @@
     animation: fadeIn 1.2s ease forwards;
   }
 
-  /* Logo */
   .logo {
     width:150px;
     height:150px;
@@ -44,7 +53,6 @@
     animation: fadeIn 0.8s ease forwards;
   }
 
-  /* Buttons Container */
   .buttons {
     margin-top:40px;
     display:flex;
@@ -53,7 +61,6 @@
     gap:20px;
   }
 
-  /* Buttons */
   .btn {
     display:inline-flex;
     align-items:center;
@@ -75,7 +82,6 @@
     height:30px;
   }
 
-  /* Discord Button */
   .discord {
     background: linear-gradient(45deg, #5865F2, #7289DA);
     box-shadow: 0 0 25px #5865F299;
@@ -86,7 +92,6 @@
     box-shadow: 0 0 35px #5865F2aa;
   }
 
-  /* WhatsApp Button */
   .whatsapp {
     background: linear-gradient(45deg, #25D366, #128C7E);
     box-shadow: 0 0 25px #25D36699;
@@ -97,13 +102,11 @@
     box-shadow: 0 0 35px #25D366aa;
   }
 
-  /* Fade-in Animation */
   @keyframes fadeIn {
     from {opacity:0; transform:translateY(20px);}
     to {opacity:1; transform:translateY(0);}
   }
 
-  /* Footer */
   footer {
     position:absolute;
     bottom:20px;
@@ -113,30 +116,37 @@
 </style>
 </head>
 <body>
-  <!-- Logo -->
   <img src="BeastBotLogo.png" alt="Beast Bot Logo" class="logo">
-
-  <!-- Titel -->
   <h1>Beast Bot</h1>
   <p>Dein smarter Begleiter auf Discord & WhatsApp</p>
 
-  <!-- Buttons -->
   <div class="buttons">
-    <!-- Discord -->
-    <a class="btn discord" href="https://discord.com/oauth2/authorize?client_id=1431342753207549992&scope=bot&permissions=8" target="_blank">
+    <a id="discordBtn" class="btn discord" href="https://discord.com/oauth2/authorize?client_id=1431342753207549992&scope=bot&permissions=8" target="_blank">
       <img src="discord.png" alt="Discord">Discord hinzufügen
     </a>
-
-    <!-- WhatsApp -->
-    <a class="btn whatsapp" href="https://wa.me/DEINE_NUMMER" target="_blank">
+    <a id="whatsappBtn" class="btn whatsapp" href="https://wa.me/DEINE_NUMMER" target="_blank">
       <img src="whatsapp.png" alt="WhatsApp">WhatsApp starten
     </a>
   </div>
 
-  <!-- Status -->
   <p>Status: 🟢 Online</p>
-
-  <!-- Footer -->
   <footer>© 2025 Beast Bot — Alle Rechte vorbehalten</footer>
+
+  <!-- Button-Tracking -->
+  <script>
+    document.getElementById("discordBtn").addEventListener("click", () => {
+      gtag('event', 'button_click', {
+        'event_category': 'interaction',
+        'event_label': 'discord_button'
+      });
+    });
+
+    document.getElementById("whatsappBtn").addEventListener("click", () => {
+      gtag('event', 'button_click', {
+        'event_category': 'interaction',
+        'event_label': 'whatsapp_button'
+      });
+    });
+  </script>
 </body>
 </html>
